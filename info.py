@@ -6,14 +6,36 @@
 # 
 
 import platform
+import distro
+import cpuinfo
+import psutil
 
 architecture = platform.architecture()[0]
 machine = platform.machine()
 user = platform.node()
+system = platform.system()
+dist = distro.linux_distribution()
+dist = " ".join(x for x in dist)
 
-allInfo = {
-    'Architecture': architecture,
-    'Machine': machine
+for key, value in cpuinfo.get_cpu_info().items():
+    print(f"{key}: {value}")
+# print(info)
+
+allInfo: dict = {
+    'architecture': architecture, 
+    'machine': machine,
+    'userName': user,
+    'system': system,
+    'distribution': dist
 }
 
-print(f'All Info: {type(allInfo)}')
+print(f"All Info: {allInfo}")
+
+for proc in psutil.process_iter():
+    try:
+        # Get process name & pid from process object.
+        processName = proc.name()
+        processID = proc.pid
+        print(processName , ' : ', processID)
+    except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+        pass
