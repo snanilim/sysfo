@@ -29,13 +29,20 @@ allInfo: dict = {
     'distribution': dist
 }
 
-print(f"All Info: {allInfo}")
+# print(f"All Info: {allInfo}")
 
-for proc in psutil.process_iter():
-    try:
-        # Get process name & pid from process object.
-        processName = proc.name()
-        processID = proc.pid
-        print(processName , ' : ', processID)
-    except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-        pass
+# for proc in psutil.process_iter():
+#     try:
+#         # Get process name & pid from process object.
+#         processName = proc.name()
+#         processID = proc.pid
+#         print(proc)
+#     except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+#         pass
+
+# mem = psutil.virtual_memory()
+# disk = psutil.disk_usage('/')
+# net = psutil.net_io_counters()
+# print(mem)
+# print(disk)
+# print(net)
