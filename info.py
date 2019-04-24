@@ -1,6 +1,8 @@
 # https://thispointer.com/python-get-list-of-all-running-processes-and-sort-by-highest-memory-usage/
 # https://www.pythoncircle.com/post/535/python-script-9-getting-system-information-in-linux-using-python-script/
 # http://www.steves-internet-guide.com/into-mqtt-python-client/
+# https://mntolia.com/sample-page/
+# https://www.ev3dev.org/docs/tutorials/sending-and-receiving-messages-with-mqtt/
 # Python script to fetch system information
 # Author -  ThePythonDjango.Com
 # Tested with Python3 on Ubuntu 16.04
