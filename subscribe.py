@@ -8,10 +8,12 @@ def on_connect(client, userdata, flags, rc):
   print("Connected with result code "+str(rc))
   client.subscribe("topic/test")
 
-def on_message(client, userdata, msg):
-  if msg.payload.decode() == "Hello world!":
-    print("Yes!")
-    client.disconnect()
+def on_message(client, userdata, message):
+  topic = message.topic
+  msgr = str(message.payload.decode("utf-8"))
+  msgr = "Message Received " + msgr
+  print(msgr)
+    # client.disconnect()
     
 client = mqtt.Client()
 client.connect("broker.hivemq.com",1883,60)

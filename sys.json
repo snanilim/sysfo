@@ -1,0 +1,612 @@
+{
+    "cpu_info": {
+        "arch": "X86_64",
+    "bits": 64,
+    "brand": "Intel(R) Core(TM) i7-5500U CPU @ 2.40GHz",
+    "count": 4,
+    "cpuinfo_version": [
+            5,
+            0,
+            0
+        ],
+    "extended_model": 3,
+    "family": 6,
+    "hz_actual": "2.1426 GHz",
+    "hz_actual_raw": [
+            2142564000,
+            0
+        ],
+    "hz_advertised": "2.4000 GHz",
+    "hz_advertised_raw": [
+            2400000000,
+            0
+        ],
+    "l1_data_cache_size": "32 KB",
+    "l1_instruction_cache_size": "32 KB",
+    "l2_cache_associativity": "0x100",
+    "l2_cache_line_size": 6,
+    "l2_cache_size": "256 KB",
+    "l3_cache_size": "4096 KB",
+    "model": 61,
+    "python_version": "3.6.7.final.0 (64 bit)",
+    "raw_arch_string": "x86_64",
+    "stepping": 4,
+    "vendor_id": "GenuineIntel"
+    },
+"disk_info": {   "free": 921000181760,
+     "percent": 1.3,
+     "total": 983429038080,
+     "used": 12401926144
+    },
+"memory_info": {   "active": 2760478720,
+       "available": 5298356224,
+       "buffers": 179601408,
+       "cached": 2015178752,
+       "free": 3711762432,
+       "inactive": 1403764736,
+       "percent": 36.0,
+       "shared": 439697408,
+       "slab": 216289280,
+       "total": 8280420352,
+       "used": 2373877760
+    },
+"network_info": {   "bytes_recv": 70033122,
+        "bytes_sent": 7552234,
+        "dropin": 0,
+        "dropout": 0,
+        "errin": 0,
+        "errout": 0,
+        "packets_recv": 107419,
+        "packets_sent": 52040
+    },
+"process_info": [
+        {"name": "systemd", "username": "root"
+        },
+        {"name": "kthreadd", "username": "root"
+        },
+        {"name": "rcu_gp", "username": "root"
+        },
+        {"name": "rcu_par_gp", "username": "root"
+        },
+        {"name": "kworker/0: 0H-kblockd", "username": "root"
+        },
+        {"name": "mm_percpu_wq", "username": "root"
+        },
+        {"name": "ksoftirqd/0", "username": "root"
+        },
+        {"name": "rcu_sched", "username": "root"
+        },
+        {"name": "rcu_bh", "username": "root"
+        },
+        {"name": "migration/0", "username": "root"
+        },
+        {"name": "watchdog/0", "username": "root"
+        },
+        {"name": "cpuhp/0", "username": "root"
+        },
+        {"name": "cpuhp/1", "username": "root"
+        },
+        {"name": "watchdog/1", "username": "root"
+        },
+        {"name": "migration/1", "username": "root"
+        },
+        {"name": "ksoftirqd/1", "username": "root"
+        },
+        {"name": "kworker/1: 0H-kblockd", "username": "root"
+        },
+        {"name": "cpuhp/2", "username": "root"
+        },
+        {"name": "watchdog/2", "username": "root"
+        },
+        {"name": "migration/2", "username": "root"
+        },
+        {"name": "ksoftirqd/2", "username": "root"
+        },
+        {"name": "kworker/2: 0H-kblockd", "username": "root"
+        },
+        {"name": "cpuhp/3", "username": "root"
+        },
+        {"name": "watchdog/3", "username": "root"
+        },
+        {"name": "migration/3", "username": "root"
+        },
+        {"name": "ksoftirqd/3", "username": "root"
+        },
+        {"name": "kworker/3: 0H-kblockd", "username": "root"
+        },
+        {"name": "kdevtmpfs", "username": "root"
+        },
+        {"name": "netns", "username": "root"
+        },
+        {"name": "rcu_tasks_kthre", "username": "root"
+        },
+        {"name": "kauditd", "username": "root"
+        },
+        {"name": "khungtaskd", "username": "root"
+        },
+        {"name": "oom_reaper", "username": "root"
+        },
+        {"name": "writeback", "username": "root"
+        },
+        {"name": "kcompactd0", "username": "root"
+        },
+        {"name": "ksmd", "username": "root"
+        },
+        {"name": "khugepaged", "username": "root"
+        },
+        {"name": "crypto", "username": "root"
+        },
+        {"name": "kintegrityd", "username": "root"
+        },
+        {"name": "kblockd", "username": "root"
+        },
+        {"name": "ata_sff", "username": "root"
+        },
+        {"name": "md", "username": "root"
+        },
+        {"name": "edac-poller", "username": "root"
+        },
+        {"name": "devfreq_wq", "username": "root"
+        },
+        {"name": "watchdogd", "username": "root"
+        },
+        {"name": "kswapd0", "username": "root"
+        },
+        {"name": "kworker/u9: 0-hci0", "username": "root"
+        },
+        {"name": "ecryptfs-kthrea", "username": "root"
+        },
+        {"name": "kthrotld", "username": "root"
+        },
+        {"name": "acpi_thermal_pm", "username": "root"
+        },
+        {"name": "ipv6_addrconf", "username": "root"
+        },
+        {"name": "kstrp", "username": "root"
+        },
+        {"name": "charger_manager", "username": "root"
+        },
+        {"name": "scsi_eh_0", "username": "root"
+        },
+        {"name": "scsi_tmf_0", "username": "root"
+        },
+        {"name": "scsi_eh_1", "username": "root"
+        },
+        {"name": "scsi_tmf_1", "username": "root"
+        },
+        {"name": "scsi_eh_2", "username": "root"
+        },
+        {"name": "scsi_tmf_2", "username": "root"
+        },
+        {"name": "scsi_eh_3", "username": "root"
+        },
+        {"name": "scsi_tmf_3", "username": "root"
+        },
+        {"name": "kworker/0: 1H-kblockd", "username": "root"
+        },
+        {"name": "kworker/1: 1H-kblockd", "username": "root"
+        },
+        {"name": "jbd2/sda1-8", "username": "root"
+        },
+        {"name": "ext4-rsv-conver", "username": "root"
+        },
+        {"name": "kworker/3: 1H-kblockd", "username": "root"
+        },
+        {"name": "kworker/2: 1H-kblockd", "username": "root"
+        },
+        {"name": "kworker/3: 2-events", "username": "root"
+        },
+        {"name": "systemd-journald", "username": "root"
+        },
+        {"name": "loop0", "username": "root"
+        },
+        {"name": "loop1", "username": "root"
+        },
+        {"name": "loop2", "username": "root"
+        },
+        {"name": "loop3", "username": "root"
+        },
+        {"name": "loop4", "username": "root"
+        },
+        {"name": "loop5", "username": "root"
+        },
+        {"name": "loop6", "username": "root"
+        },
+        {"name": "loop7", "username": "root"
+        },
+        {"name": "loop8", "username": "root"
+        },
+        {"name": "loop9", "username": "root"
+        },
+        {"name": "loop10", "username": "root"
+        },
+        {"name": "loop11", "username": "root"
+        },
+        {"name": "systemd-udevd", "username": "root"
+        },
+        {"name": "loop12", "username": "root"
+        },
+        {"name": "loop13", "username": "root"
+        },
+        {"name": "loop14", "username": "root"
+        },
+        {"name": "loop15", "username": "root"
+        },
+        {"name": "irq/49-mei_me", "username": "root"
+        },
+        {"name": "kworker/u9: 1-hci0", "username": "root"
+        },
+        {"name": "cfg80211", "username": "root"
+        },
+        {"name": "i915/signal: 0", "username": "root"
+        },
+        {"name": "i915/signal: 1", "username": "root"
+        },
+        {"name": "i915/signal: 2", "username": "root"
+        },
+        {"name": "i915/signal: 6", "username": "root"
+        },
+        {"name": "ttm_swap", "username": "root"
+        },
+        {"name": "kmemstick", "username": "root"
+        },
+        {   "name": "systemd-timesyncd",
+            "username": "systemd-timesync"
+        },
+        {   "name": "systemd-resolved",
+            "username": "systemd-resolve"
+        },
+        {"name": "dbus-daemon", "username": "messagebus"
+        },
+        {"name": "cron", "username": "root"
+        },
+        {"name": "thermald", "username": "root"
+        },
+        {"name": "ModemManager", "username": "root"
+        },
+        {"name": "bluetoothd", "username": "root"
+        },
+        {"name": "acpid", "username": "root"
+        },
+        {"name": "irqbalance", "username": "root"
+        },
+        {"name": "NetworkManager", "username": "root"
+        },
+        {"name": "accounts-daemon", "username": "root"
+        },
+        {"name": "wpa_supplicant", "username": "root"
+        },
+        {"name": "systemd-logind", "username": "root"
+        },
+        {"name": "rsyslogd", "username": "syslog"
+        },
+        {"name": "avahi-daemon", "username": "avahi"
+        },
+        {"name": "networkd-dispat", "username": "root"
+        },
+        {"name": "udisksd", "username": "root"
+        },
+        {"name": "snapd", "username": "root"
+        },
+        {"name": "avahi-daemon", "username": "avahi"
+        },
+        {"name": "polkitd", "username": "root"
+        },
+        {"name": "unattended-upgr", "username": "root"
+        },
+        {"name": "gdm3", "username": "root"
+        },
+        {"name": "gdm-session-wor", "username": "root"
+        },
+        {"name": "systemd", "username": "gdm"
+        },
+        {"name": "(sd-pam)", "username": "gdm"
+        },
+        {"name": "gdm-wayland-session", "username": "gdm"
+        },
+        {"name": "dbus-daemon", "username": "gdm"
+        },
+        {"name": "gnome-session-binary", "username": "gdm"
+        },
+        {"name": "gnome-shell", "username": "gdm"
+        },
+        {"name": "dhclient", "username": "root"
+        },
+        {"name": "upowerd", "username": "root"
+        },
+        {"name": "Xwayland", "username": "gdm"
+        },
+        {"name": "at-spi-bus-launcher", "username": "gdm"
+        },
+        {"name": "dbus-daemon", "username": "gdm"
+        },
+        {"name": "at-spi2-registryd", "username": "gdm"
+        },
+        {"name": "pulseaudio", "username": "gdm"
+        },
+        {"name": "rtkit-daemon", "username": "rtkit"
+        },
+        {"name": "whoopsie", "username": "whoopsie"
+        },
+        {"name": "kerneloops", "username": "kernoops"
+        },
+        {"name": "kerneloops", "username": "kernoops"
+        },
+        {"name": "ibus-daemon", "username": "gdm"
+        },
+        {"name": "ibus-dconf", "username": "gdm"
+        },
+        {"name": "ibus-x11", "username": "gdm"
+        },
+        {"name": "ibus-portal", "username": "gdm"
+        },
+        {"name": "boltd", "username": "root"
+        },
+        {"name": "packagekitd", "username": "root"
+        },
+        {"name": "gsd-xsettings", "username": "gdm"
+        },
+        {"name": "gsd-a11y-settings", "username": "gdm"
+        },
+        {"name": "gsd-clipboard", "username": "gdm"
+        },
+        {"name": "gsd-color", "username": "gdm"
+        },
+        {"name": "gsd-datetime", "username": "gdm"
+        },
+        {"name": "gsd-housekeeping", "username": "gdm"
+        },
+        {"name": "gsd-keyboard", "username": "gdm"
+        },
+        {"name": "gsd-media-keys", "username": "gdm"
+        },
+        {"name": "gsd-mouse", "username": "gdm"
+        },
+        {"name": "gsd-power", "username": "gdm"
+        },
+        {"name": "gsd-print-notifications", "username": "gdm"
+        },
+        {"name": "gsd-rfkill", "username": "gdm"
+        },
+        {"name": "gsd-screensaver-proxy", "username": "gdm"
+        },
+        {"name": "gsd-sharing", "username": "gdm"
+        },
+        {"name": "gsd-smartcard", "username": "gdm"
+        },
+        {"name": "gsd-sound", "username": "gdm"
+        },
+        {"name": "gsd-wacom", "username": "gdm"
+        },
+        {"name": "ibus-engine-simple", "username": "gdm"
+        },
+        {"name": "colord", "username": "colord"
+        },
+        {"name": "gdm-session-wor", "username": "root"
+        },
+        {"name": "systemd", "username": "nilim"
+        },
+        {"name": "(sd-pam)", "username": "nilim"
+        },
+        {"name": "gnome-keyring-daemon", "username": "nilim"
+        },
+        {"name": "gdm-x-session", "username": "nilim"
+        },
+        {"name": "Xorg", "username": "nilim"
+        },
+        {"name": "dbus-daemon", "username": "nilim"
+        },
+        {"name": "gnome-session-binary", "username": "nilim"
+        },
+        {"name": "ssh-agent", "username": "nilim"
+        },
+        {"name": "at-spi-bus-launcher", "username": "nilim"
+        },
+        {"name": "dbus-daemon", "username": "nilim"
+        },
+        {"name": "at-spi2-registryd", "username": "nilim"
+        },
+        {"name": "gnome-shell", "username": "nilim"
+        },
+        {"name": "gvfsd", "username": "nilim"
+        },
+        {"name": "gvfsd-fuse", "username": "nilim"
+        },
+        {"name": "pulseaudio", "username": "nilim"
+        },
+        {"name": "krfcommd", "username": "root"
+        },
+        {"name": "ibus-daemon", "username": "nilim"
+        },
+        {"name": "ibus-dconf", "username": "nilim"
+        },
+        {"name": "ibus-x11", "username": "nilim"
+        },
+        {"name": "ibus-portal", "username": "nilim"
+        },
+        {   "name": "gnome-shell-calendar-server",
+            "username": "nilim"
+        },
+        {"name": "dconf-service", "username": "nilim"
+        },
+        {   "name": "gvfs-udisks2-volume-monitor",
+            "username": "nilim"
+        },
+        {   "name": "gvfs-goa-volume-monitor",
+            "username": "nilim"
+        },
+        {"name": "goa-daemon", "username": "nilim"
+        },
+        {   "name": "evolution-source-registry",
+            "username": "nilim"
+        },
+        {"name": "goa-identity-service", "username": "nilim"
+        },
+        {   "name": "gvfs-afc-volume-monitor",
+            "username": "nilim"
+        },
+        {   "name": "gvfs-gphoto2-volume-monitor",
+            "username": "nilim"
+        },
+        {   "name": "gvfs-mtp-volume-monitor",
+            "username": "nilim"
+        },
+        {"name": "gsd-power", "username": "nilim"
+        },
+        {   "name": "gsd-print-notifications",
+            "username": "nilim"
+        },
+        {"name": "gsd-rfkill", "username": "nilim"
+        },
+        {"name": "gsd-screensaver-proxy", "username": "nilim"
+        },
+        {"name": "gsd-sharing", "username": "nilim"
+        },
+        {"name": "gsd-smartcard", "username": "nilim"
+        },
+        {"name": "gsd-xsettings", "username": "nilim"
+        },
+        {"name": "gsd-wacom", "username": "nilim"
+        },
+        {"name": "gsd-sound", "username": "nilim"
+        },
+        {"name": "gsd-clipboard", "username": "nilim"
+        },
+        {"name": "gsd-a11y-settings", "username": "nilim"
+        },
+        {"name": "gsd-datetime", "username": "nilim"
+        },
+        {"name": "gsd-color", "username": "nilim"
+        },
+        {"name": "gsd-keyboard", "username": "nilim"
+        },
+        {"name": "gsd-housekeeping", "username": "nilim"
+        },
+        {"name": "gsd-mouse", "username": "nilim"
+        },
+        {"name": "gsd-media-keys", "username": "nilim"
+        },
+        {"name": "nautilus-desktop", "username": "nilim"
+        },
+        {   "name": "gsd-disk-utility-notify",
+            "username": "nilim"
+        },
+        {"name": "gsd-printer", "username": "nilim"
+        },
+        {   "name": "evolution-calendar-factory",
+            "username": "nilim"
+        },
+        {"name": "gvfsd-trash", "username": "nilim"
+        },
+        {"name": "ibus-engine-simple", "username": "nilim"
+        },
+        {   "name": "evolution-calendar-factory-subprocess",
+            "username": "nilim"
+        },
+        {   "name": "evolution-addressbook-factory",
+            "username": "nilim"
+        },
+        {   "name": "evolution-addressbook-factory-subprocess",
+            "username": "nilim"
+        },
+        {"name": "firefox", "username": "nilim"
+        },
+        {"name": "Web Content", "username": "nilim"
+        },
+        {"name": "WebExtensions", "username": "nilim"
+        },
+        {"name": "update-notifier", "username": "nilim"
+        },
+        {"name": "gnome-software", "username": "nilim"
+        },
+        {"name": "fwupd", "username": "root"
+        },
+        {"name": "deja-dup-monitor", "username": "nilim"
+        },
+        {"name": "cupsd", "username": "root"
+        },
+        {"name": "cups-browsed", "username": "root"
+        },
+        {"name": "Web Content", "username": "nilim"
+        },
+        {"name": "gvfsd-metadata", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "bash", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "python3", "username": "nilim"
+        },
+        {"name": "python3", "username": "nilim"
+        },
+        {"name": "Web Content", "username": "nilim"
+        },
+        {"name": "gnome-terminal-server", "username": "nilim"
+        },
+        {"name": "bash", "username": "nilim"
+        },
+        {"name": "mosquitto", "username": "mosquitto"
+        },
+        {"name": "code", "username": "nilim"
+        },
+        {"name": "bash", "username": "nilim"
+        },
+        {"name": "python3", "username": "nilim"
+        },
+        {"name": "kworker/2: 0-events", "username": "root"
+        },
+        {"name": "kworker/1: 1-events", "username": "root"
+        },
+        {"name": "kworker/u8: 2-phy0", "username": "root"
+        },
+        {"name": "Web Content", "username": "nilim"
+        },
+        {"name": "Web Content", "username": "nilim"
+        },
+        {"name": "kworker/0: 2-events", "username": "root"
+        },
+        {"name": "gdm-session-wor", "username": "root"
+        },
+        {"name": "kworker/u8: 0-phy0", "username": "root"
+        },
+        {"name": "kworker/2: 2-events", "username": "root"
+        },
+        {"name": "kworker/3: 1-events", "username": "root"
+        },
+        {   "name": "kworker/u8: 1-events_power_efficient",
+            "username": "root"
+        },
+        {"name": "kworker/0: 1-events", "username": "root"
+        },
+        {"name": "kworker/1: 0-events", "username": "root"
+        },
+        {   "name": "kworker/2: 1-mm_percpu_wq",
+            "username": "root"
+        },
+        {"name": "kworker/3: 0-events", "username": "root"
+        },
+        {   "name": "kworker/u8: 3-events_power_efficient",
+            "username": "root"
+        },
+        {"name": "kworker/0: 0-events", "username": "root"
+        },
+        {"name": "kworker/1: 2-events", "username": "root"
+        },
+        {"name": "thunderbird", "username": "nilim"
+        },
+        {"name": "python3", "username": "nilim"
+        }
+    ]
+}

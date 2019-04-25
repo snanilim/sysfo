@@ -27,7 +27,7 @@ def on_message(client, userdata, message):
     msgr = "Message Received " + msgr
     logging.info(msgr)
 def reset():
-    ret = client.publish("house/bulb1", "test message 123", 0, True)
+    ret = client.publish("house/bulb1", "", 0, True)
 
 
 
@@ -48,7 +48,7 @@ while not client.connected_flag:
     logging.info("In Wait Loop")
     time.sleep(1)
 time.sleep(3)
-ret = client.publish("house/bulb1", "test message 0", 0)
+ret = client.publish("house/bulb1", "test message 0", 0, True)
 logging.info("Publish return " + str(ret))
 ret = client.publish("house/bulb1", "test message 1", 1)
 logging.info("Publish return " + str(ret))
@@ -56,7 +56,7 @@ ret = client.publish("house/bulb1", "test message 2", 2)
 logging.info("Publish return " + str(ret))
 
 time.sleep(3)
-client.subscribe("house/bulb1", 0)
+client.subscribe("house/bulb1", 2)
 reset()
 time.sleep(10)
 client.loop_stop()
