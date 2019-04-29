@@ -10,9 +10,9 @@ var led_is_on    = null;
 var hostname       = "broker.hivemq.com";
 var port           = "8000";
 var clientId       = "mqtt_js_" + parseInt(Math.random() * 100000, 10);
-var temp_topic     = "home/outdoors/temperature";
-var humidity_topic = "web/hello/next";
-var status_topic   = "web/hello";
+var temp_topic     = "srdl/each_info/*";
+var humidity_topic = "srdl/info/test";
+var status_topic   = "srdl/req_info/test";
 
 // This is called after the webpage is completely loaded
 // It is the main entry point into the JS code
@@ -88,11 +88,12 @@ function onMessageArrived(message) {
 // Provides the button logic that toggles our display LED on and off
 // Triggered by pressing the HTML button "status_button"
 function led_toggle(){
+	const info = ["1", "all", "cpu", "memory", "disk", "process", "network"];
 	if (led_is_on){
-		var payload = "off";
+		var payload = info.toString();
 		led_is_on = false;
 	} else {
-		var payload = "on";
+		var payload = info.toString();
 		led_is_on = true;
 	}
 

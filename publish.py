@@ -11,6 +11,6 @@ client.connect("broker.hivemq.com",1883,60)
 
 client.loop_start()
 while True:
-    client.publish("web/hello", "Hello world!")
+    client.publish("topic/test", "Hello world!")
     time.sleep(10)
 client.disconnect()
