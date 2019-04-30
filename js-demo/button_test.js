@@ -10,7 +10,7 @@ var led_is_on    = null;
 var hostname       = "broker.hivemq.com";
 var port           = "8000";
 var clientId       = "mqtt_js_" + parseInt(Math.random() * 100000, 10);
-var temp_topic     = "srdl/each_info/*";
+var temp_topic     = "srdl/each_info/";
 var humidity_topic = "srdl/info/test";
 var status_topic   = "srdl/req_info/test";
 

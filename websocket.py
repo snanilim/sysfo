@@ -8,14 +8,14 @@ def on_connect(mqttc, obj, flags, rc):
 
 def on_message(mqttc, obj, msg):
     print('okk', msg.qos)
-    mqttc.publish("web/hello/next", "Hello worldsss!")
+    
     print(msg.topic+" "+str(msg.qos)+" "+str(msg.payload))
 
 def on_click(mqttc, obj, flags, rc):
     print("click: "+str(rc))
 
 def on_publish(mqttc, obj, mid):
-    
+    mqttc.publish("web/hello", "Hello worldsss!")
     print("mid: "+str(mid))
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
@@ -36,5 +36,7 @@ mqttc.on_click = on_click
 mqttc.connect("broker.hivemq.com", 8000, 60)
 
 mqttc.subscribe("web/hello", 1)
+
+mqttc.publish("web/hello", "Hello worldsss!")
 
 mqttc.loop_forever()
