@@ -1,5 +1,8 @@
 from pynput import mouse, keyboard
 from datetime import datetime
+import os.path, time
+print("last modified: %s" % time.ctime(os.path.getmtime("demofile2.txt")))
+print("created: %s" % time.ctime(os.path.getctime("demofile2.txt")))
 
 # Set time on Global Variables
 time = 0
@@ -9,6 +12,11 @@ def _update_time():
     timestamp = datetime.timestamp(now)
     global time
     time = timestamp
+
+    f = open("demofile2.txt", "w")
+    f.write("Now the file has more content!")
+    f.close()
+
     return timestamp
 
 def _on_press(key):

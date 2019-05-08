@@ -1,4 +1,4 @@
-from agent_pc_info import *
+from agent_info import *
 import time
 import paho.mqtt.client as mqtt
 import random
@@ -13,8 +13,7 @@ client = mqtt.Client(r)
 broker = "broker.hivemq.com"
 port = 1883
 
-mac_addr = hex(uuid.getnode()).replace('0x', '')
-':'.join(mac_addr[i : i + 2] for i in range(0, 11, 2))
+mac_addr = mac_addr()
 keep_alive = {
 	'mac_addr': mac_addr,
 	'alive': True

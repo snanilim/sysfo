@@ -1,6 +1,7 @@
 import psutil
 import cpuinfo
 import pprint
+import re, uuid
 
 
 def _getCpuInfo():
@@ -43,57 +44,64 @@ def _getNetworkInfo():
         net_obj.update({key: value})
     return net_obj
 
-def info(msg):
+def _getStatus():
+    return "online"
+
+def _getIdleTime():
+    return "time"
+
+
+def mac_addr():
+    mac_addr = hex(uuid.getnode()).replace('0x', '')
+    ':'.join(mac_addr[i : i + 2] for i in range(0, 11, 2))
+    return mac_addr
+
+def info(data):
     # print('msg', msg.split(','))
-    all_info: dict = {}
-    if 'alls' in msg:
-        print(True)
+    all_info = {}
+
+    status_value = data.get("status", "")
+    if 'status' in data and status_value == '1':
+        # cpu info
+        status_info = _getStatus()
+        all_info.update({'status': status_info})
+
+    idle_value = data.get("idle", "")
+    if 'idle' in data and idle_value == '1':
+        # cpu info
+        idle_info = _getIdleTime()
+        all_info.update({'idle': idle_info})
+
+    cpu_value = data.get("cpu", "")
+    if 'cpu' in data and cpu_value == '1':
         # cpu info
         cpu_info = _getCpuInfo()
         all_info.update({'cpu_info': cpu_info})
 
+    memory_value = data.get("memory", "")
+    if 'memory' in data and memory_value == '1':
+        print('memory')
         # memory info
         memory_info = _getMemoryInfo()
         all_info.update({'memory_info': memory_info})
 
+    disk_value = data.get("disk", "")
+    if 'disk' in data and disk_value == '1':
         # disk info
         disk_info = _getDiskInfo()
         all_info.update({'disk_info': disk_info})
 
+    process_value = data.get("process", "")
+    if 'process' in data and process_value == '1':
         # process info
         process_info = _getProcessInfo()
         all_info.update({'process_info': process_info})
 
+    network_value = data.get("network", "")
+    if 'network' in data and network_value == '1':
         # network info
         network_info = _getNetworkInfo()
         all_info.update({'network_info': network_info})
-
-    else:
-        if 'cpu' in msg:
-            # cpu info
-            cpu_info = _getCpuInfo()
-            all_info.update({'cpu_info': cpu_info})
-
-        if 'memory' in msg:
-            print('memory')
-            # memory info
-            memory_info = _getMemoryInfo()
-            all_info.update({'memory_info': memory_info})
-
-        if 'disk' in msg:
-            # disk info
-            disk_info = _getDiskInfo()
-            all_info.update({'disk_info': disk_info})
-
-        if 'process' in msg:
-            # process info
-            process_info = _getProcessInfo()
-            all_info.update({'process_info': process_info})
-
-        if 'network' in msg:
-            # network info
-            network_info = _getNetworkInfo()
-            all_info.update({'network_info': network_info})
     
     return all_info
     # pp = pprint.PrettyPrinter(indent=4)
