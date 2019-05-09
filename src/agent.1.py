@@ -44,13 +44,17 @@ client.on_message = on_message	#attach the callback function to the client objec
 client.connect(broker,port,60)
 print ("connecting to broker")
 
+# srdl/req_topic/d8:5d:e2:2f:de:bf
+# srdl/res_topic/d8:5d:e2:2f:de:bf
+# srdl/req_info/dhaka/dhaka/mohakhali/sheba/d8:5d:e2:2f:de:bf/
+# srdl/res_info/dhaka/dhaka/mohakhali/sheba/d8:5d:e2:2f:de:bf/
 
 # client.subscribe("srdl/req_info/test")
-client.subscribe(f"srdl/req_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
+
 client.subscribe(f"srdl/res_topic/{mac_addr}", 1)
 if district is None:
 	client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
-print ("subscribed", f"srdl/req_topic/{mac_addr}")
+
 
 
 def check_topic(msg):
@@ -58,7 +62,7 @@ def check_topic(msg):
 	if (division is None and district is None and upazilla is None and lab_id is None):
 		data = json.loads(msg)
 		topic_value = data.get("topic", "")
-
+		
 		if 'topic' in data and topic_value == 1:
 			if 'division' in data:
 				value = data.get("division", "")
@@ -79,9 +83,11 @@ def check_topic(msg):
 				value = data.get("lab_id", "")
 				lab_id = value
 				print('msges', value)
+
+			client.subscribe(f"srdl/req_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
 		else:
 			client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
-		# print(f"srdl/req_topic/{mac_addr}")
+		print ("subscribed", f"srdl/req_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
 		# district = "Dhaka"
 	else:
 		return True
@@ -93,8 +99,9 @@ def send_data_to_broker(msg):
 	if 'info' in data and info_value == 1:
 		print("I'm here")
 		res_info = info(data)
-		# print(res_info)
-		client.publish(f"srdl/res_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}", str(res_info))
+		print(res_info)
+		print(f"srdl/res_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
+		client.publish(f"srdl/res_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/", str(res_info))
 
 	
 	
