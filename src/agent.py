@@ -14,6 +14,7 @@ broker = "broker.hivemq.com"
 port = 1883
 
 mac_addr = mac_addr()
+# print(mac_addr)
 keep_alive = {
 	'mac_addr': mac_addr,
 	'alive': True
@@ -48,6 +49,11 @@ print ("connecting to broker")
 # srdl/res_topic/d8:5d:e2:2f:de:bf
 # srdl/req_info/dhaka/dhaka/mohakhali/sheba/d8:5d:e2:2f:de:bf/
 # srdl/res_info/dhaka/dhaka/mohakhali/sheba/d8:5d:e2:2f:de:bf/
+
+# srdl/req_topic/68:f7:28:e3:f4:d4
+# srdl/res_topic/68:f7:28:e3:f4:d4
+# srdl/req_info/dhaka/dhaka/mohakhali/sheba/68:f7:28:e3:f4:d4/
+# srdl/res_info/dhaka/dhaka/mohakhali/sheba/68:f7:28:e3:f4:d4/
 
 # client.subscribe("srdl/req_info/test")
 
