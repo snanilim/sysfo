@@ -3,6 +3,7 @@ import cpuinfo
 import pprint
 import re, uuid
 import os.path, time
+from requests import get
 
 def _getCpuInfo():
     cpu_obj: dict = {}
@@ -78,6 +79,10 @@ def mac_addr():
     mac_addr = ':'.join(mac_addr[i : i + 2] for i in range(0, 11, 2))
     return mac_addr
 
+def gateway_ip():
+    ip = get('https://api.ipify.org').text
+    return ip
+
 
 def info(data):
     # print('msg', msg.split(','))
@@ -132,8 +137,11 @@ def info(data):
         network_info = _getNetworkInfo()
         all_info.update({'network_info': network_info})
     
-    mac_addr_alue = mac_addr()
-    all_info.update({'mac_addr': mac_addr_alue})
+    mac_addr_value = mac_addr()
+    all_info.update({'mac_addr': mac_addr_value})
+
+    gateway_ip_value = gateway_ip()
+    all_info.update({'gateway_ip': gateway_ip_value})
 
     return all_info
     # pp = pprint.PrettyPrinter(indent=4)
