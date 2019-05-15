@@ -1,0 +1,21 @@
+{
+   "topic": 1,
+   "division": 3,
+   "district": 11,
+   "upazilla": 221,
+   "lab_id": 34
+}
+
+{
+   "info": 1,
+   "status": 1,
+   "idle": 1,
+   "cpu": 0,
+   "memory": 0,
+   "disk": 0,
+   "process": 0,
+   "network": 0
+}
+ 
+
+
