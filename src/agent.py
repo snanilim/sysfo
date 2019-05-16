@@ -65,6 +65,7 @@ print ("connecting to broker")
 # client.subscribe("srdl/res_offline/d8:5d:e2:2f:de:bf/")
 
 client.subscribe(f"srdl/res_topic/{mac_addr}", 1)
+client.subscribe(f"srdl/req_info", 1)
 if district is None:
 	client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
 
