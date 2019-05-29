@@ -1,0 +1,19 @@
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+hello man kmn acho
+ Key.enter 
+bhalo kaj koro 
+ Key.enter 
+ok is
+ Key.backspace 
+ts done.
+ Key.enter 
+Button.left
+Button.left
+
+ Key.ctrl 
+c
