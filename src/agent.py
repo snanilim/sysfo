@@ -22,9 +22,9 @@ gateway_ip = gateway_ip()
 # }
 # keep_alive = str(keep_alive)
 
-division = None
-district = None
-upazilla = None
+division_id = None
+district_id = None
+upazilla_id = None
 lab_id = None
 
 
@@ -46,7 +46,8 @@ offline = {
  "mac_addr": mac_addr,
  "gateway_ip": gateway_ip
 }
-client.will_set(f"srdl/res_offline/{mac_addr}/", payload=str(offline), qos=1, retain=False)
+offline_dump = json.dumps(offline)
+client.will_set(f"srdl/res_offline/{mac_addr}/", payload = offline_dump, qos=1, retain=False)
 client.connect(broker,port,60)
 print ("connecting to broker")
 
@@ -66,43 +67,48 @@ print ("connecting to broker")
 
 client.subscribe(f"srdl/res_topic/{mac_addr}", 1)
 client.subscribe(f"srdl/req_info", 1)
-if district is None:
-	client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
+if district_id is None:
+	print("Publish topic for address")
+	# client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
+	topic = {"topic" : 1}
+	topic_dump = json.dumps(topic)
+	client.publish( f"srdl/req_topic/{mac_addr}", topic_dump)
 
 
 
 def check_topic(msg):
-	global division, district, upazilla, lab_id
-	if (division is None and district is None and upazilla is None and lab_id is None):
+	global division_id, district_id, upazilla_id, lab_id
+	if (division_id is None and district_id is None and upazilla_id is None and lab_id is None):
 		data = json.loads(msg)
 		topic_value = data.get("topic", "")
 		
 		if 'topic' in data and topic_value == 1:
-			if 'division' in data:
-				value = data.get("division", "")
-				division = value
-				print('msges', value)
+			print("Address info receive from server")
+			if 'division_id' in data:
+				value = data.get("division_id", "")
+				division_id = value
+				print('division_id', value)
 
-			if 'district' in data:
-				value = data.get("district", "")
-				district = value
-				print('msges', value)
+			if 'district_id' in data:
+				value = data.get("district_id", "")
+				district_id = value
+				print('district_id', value)
 
-			if 'upazilla' in data:
-				value = data.get("upazilla", "")
-				upazilla = value
-				print('msges', value)
+			if 'upazilla_id' in data:
+				value = data.get("upazilla_id", "")
+				upazilla_id = value
+				print('upazilla_id', value)
 
 			if 'lab_id' in data:
 				value = data.get("lab_id", "")
 				lab_id = value
-				print('msges', value)
+				print('lab_id', value)
 			print('ok')
-			client.subscribe(f"srdl/req_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
+			client.subscribe(f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
 		else:
 			client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
-		print ("subscribed", f"srdl/req_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
-		# district = "Dhaka"
+		print ("subscribed", f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
+		# district_id = "Dhaka"
 	else:
 		return True
 
@@ -111,11 +117,12 @@ def send_data_to_broker(msg):
 	info_value = data.get("info", "")
 
 	if 'info' in data and info_value == 1:
-		print("I'm here")
+		print("Receive a request for send info")
 		res_info = info(data)
 		print(res_info)
-		print(f"srdl/res_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/")
-		client.publish(f"srdl/res_info/{division}/{district}/{upazilla}/{lab_id}/{mac_addr}/", str(res_info))
+		print(f"srdl/res_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
+		res_info = json.dumps(res_info)
+		client.publish(f"srdl/res_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/", res_info)
 
 	
 	
