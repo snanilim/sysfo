@@ -106,7 +106,11 @@ def check_topic(msg):
 			print('ok')
 			client.subscribe(f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
 		else:
-			client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
+			print("Publish topic for address")
+			# client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
+			topic = {"topic" : 1}
+			topic_dump = json.dumps(topic)
+			client.publish( f"srdl/req_topic/{mac_addr}", topic_dump)
 		print ("subscribed", f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
 		# district_id = "Dhaka"
 	else:
