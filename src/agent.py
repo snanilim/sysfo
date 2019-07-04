@@ -5,6 +5,12 @@ import random
 import re, uuid
 import json
 
+if platform.system() == "Windows":
+	import multiprocessing
+	multiprocessing.freeze_support()
+
+
+
 
 
 uuid.uuid4 # generating randorm number in base64
@@ -49,7 +55,7 @@ offline = {
 offline_dump = json.dumps(offline)
 client.will_set(f"srdl/res_offline/{mac_addr}/", payload = offline_dump, qos=1, retain=False)
 client.connect(broker,port,60)
-print ("connecting to broker")
+print ("connecting to broker", mac_addr)
 
 # srdl/req_topic/d8:5d:e2:2f:de:bf/
 # srdl/res_topic/d8:5d:e2:2f:de:bf/
@@ -66,7 +72,7 @@ print ("connecting to broker")
 # client.subscribe("srdl/res_offline/d8:5d:e2:2f:de:bf/")
 
 client.subscribe(f"srdl/res_topic/{mac_addr}/", 1)
-client.subscribe(f"srdl/req_info", 1)
+client.subscribe(f"srdl/req_info/", 1)
 if district_id is None:
 	print("Publish topic for address")
 	# client.publish(f"srdl/req_topic/{mac_addr}/", str({"topic": 1}))

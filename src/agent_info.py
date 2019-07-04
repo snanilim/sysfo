@@ -6,6 +6,7 @@ import os.path, time, datetime
 import platform
 from requests import get
 
+
 def _getCpuInfo():
     cpu_obj: dict = {}
     cpu_info = cpuinfo.get_cpu_info().items()
@@ -13,6 +14,7 @@ def _getCpuInfo():
         cpu_obj.update({key : value})
     del cpu_obj['flags']
     return cpu_obj
+
 
 
 def _getMemoryInfo():
