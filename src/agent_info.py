@@ -72,7 +72,7 @@ def _getStatus():
 
 def _getIdleTime():
     if platform.system() == 'Linux':
-        idle_time = time.ctime(os.path.getmtime("idlefile.txt"))
+        idle_time = os.path.getmtime("idlefile.txt")
         return idle_time
     elif platform.system() == 'Windows':
         from ctypes import Structure, windll, c_uint, sizeof, byref
@@ -90,7 +90,8 @@ def _getIdleTime():
             millis = windll.kernel32.GetTickCount() - lastInputInfo.dwTime
             sec = millis / 1000.0
             ctime = datetime.datetime.now() - datetime.timedelta(seconds = sec)
-            return ctime.strftime("%a %b %d %H:%M:%S %Y")
+            unixtime = time.mktime(ctime.timetuple())
+            return unixtime
             # return millis / 1000.0
 
         return get_idle_duration()

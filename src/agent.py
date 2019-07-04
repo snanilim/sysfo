@@ -51,13 +51,13 @@ client.will_set(f"srdl/res_offline/{mac_addr}/", payload = offline_dump, qos=1, 
 client.connect(broker,port,60)
 print ("connecting to broker")
 
-# srdl/req_topic/d8:5d:e2:2f:de:bf
-# srdl/res_topic/d8:5d:e2:2f:de:bf
+# srdl/req_topic/d8:5d:e2:2f:de:bf/
+# srdl/res_topic/d8:5d:e2:2f:de:bf/
 # srdl/req_info/3/11/221/34/d8:5d:e2:2f:de:bf/
 # srdl/res_info/3/11/221/34/d8:5d:e2:2f:de:bf/
 
-# srdl/req_topic/68:f7:28:e3:f4:d4
-# srdl/res_topic/68:f7:28:e3:f4:d4
+# srdl/req_topic/68:f7:28:e3:f4:d4/
+# srdl/res_topic/68:f7:28:e3:f4:d4/
 # srdl/req_info/3/11/221/34/68:f7:28:e3:f4:d4/
 # srdl/res_info/3/11/221/34/68:f7:28:e3:f4:d4/
 
@@ -65,14 +65,14 @@ print ("connecting to broker")
 
 # client.subscribe("srdl/res_offline/d8:5d:e2:2f:de:bf/")
 
-client.subscribe(f"srdl/res_topic/{mac_addr}", 1)
+client.subscribe(f"srdl/res_topic/{mac_addr}/", 1)
 client.subscribe(f"srdl/req_info", 1)
 if district_id is None:
 	print("Publish topic for address")
-	# client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
+	# client.publish(f"srdl/req_topic/{mac_addr}/", str({"topic": 1}))
 	topic = {"topic" : 1}
 	topic_dump = json.dumps(topic)
-	client.publish( f"srdl/req_topic/{mac_addr}", topic_dump)
+	client.publish( f"srdl/req_topic/{mac_addr}/", topic_dump)
 
 
 
@@ -107,10 +107,10 @@ def check_topic(msg):
 			client.subscribe(f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
 		else:
 			print("Publish topic for address")
-			# client.publish(f"srdl/req_topic/{mac_addr}", str({"topic": 1}))
+			# client.publish(f"srdl/req_topic/{mac_addr}/", str({"topic": 1}))
 			topic = {"topic" : 1}
 			topic_dump = json.dumps(topic)
-			client.publish( f"srdl/req_topic/{mac_addr}", topic_dump)
+			client.publish( f"srdl/req_topic/{mac_addr}/", topic_dump)
 		print ("subscribed", f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
 		# district_id = "Dhaka"
 	else:
