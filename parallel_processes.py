@@ -3,8 +3,8 @@ import os
 from multiprocessing import Pool                                                
                                                                                 
                                                                                 
-processes = ('process1.py', 'process2.py')                                    
-other = ('process3.py',)
+processes = ('process1.py', 'process3.py')                                    
+other = ('process2.py',)
                                                   
                                                                                 
 def run_process(process):                                                             
@@ -14,3 +14,19 @@ def run_process(process):
 pool = Pool(processes=3)                                                        
 pool.map(run_process, processes) 
 pool.map(run_process, other) 
+
+
+
+# import os                                                                       
+# from multiprocessing import Pool                                                
+                                                                                
+                                                                                
+# processes = ('process1.py', 'process2.py', 'process3.py')                                    
+                                                  
+                                                                                
+# def run_process(process):                                                             
+#     os.system('python {}'.format(process))                                       
+                                                                                
+                                                                                
+# pool = Pool(processes=3)                                                        
+# pool.map(run_process, processes) 
