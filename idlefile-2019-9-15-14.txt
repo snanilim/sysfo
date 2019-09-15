@@ -1,0 +1,121 @@
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+
+ Key.alt 
+
+ Key.tab 
+
+ Key.alt 
+
+ Key.tab 
+Button.left
+Button.left
+Button.left
+Button.left
+if 
+ Key.shift_r 
+__na
+ Key.enter 
+ === 
+ Key.alt 
+
+ Key.tab 
+
+ Key.alt 
+
+ Key.tab 
+
+ Key.backspace 
+
+ Key.backspace 
+ 
+ Key.shift_r 
+'
+ Key.shift_r 
+__main
+ Key.shift_r 
+__
+ Key.right 
+
+ Key.shift_r 
+:
+ Key.ctrl 
+sButton.left
+Button.left
+
+ Key.tab 
+
+ Key.ctrl 
+sButton.left
+Button.left
+Button.left
+Button.left
+
+ Key.ctrl 
+cButton.left
+Button.left
+aButton.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+asdButton.left
+Button.left
+Button.left
+Button.left
+Button.right
+Button.right
+Button.left
+Button.left
+Button.left
+Button.left
+asdfggsaButton.left
+Button.left
+Button.left
+Button.left
+
+ Key.ctrl 
+cButton.left
+Button.left
+Button.left
+Button.left
+
+ Key.alt 
+`
+ Key.alt 
+`Button.left
+Button.left
+
+ Key.ctrl 
+cButton.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+Button.left
+
+ Key.ctrl 
+c
