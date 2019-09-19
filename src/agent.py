@@ -41,8 +41,9 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
 	print("topic: "+message.topic+"	"+"payload: "+str(message.payload.decode("utf-8")))
-	check_topic(str(message.payload.decode("utf-8")))
-	send_data_to_broker(str(message.payload.decode("utf-8")))
+	checkResponse = check_topic(str(message.payload.decode("utf-8")))
+	if checkResponse:
+		send_data_to_broker(str(message.payload.decode("utf-8")))
 
 client.on_connect = on_connect  #attach the callback function to the client object 
 client.on_message = on_message	#attach the callback function to the client object
@@ -76,7 +77,7 @@ client.subscribe(f"srdl/req_info/", 1)
 if district_id is None:
 	print("Publish topic for address")
 	# client.publish(f"srdl/req_topic/{mac_addr}/", str({"topic": 1}))
-	topic = {"topic" : 1}
+	topic = {"topic" : 1, "mac_addr": mac_addr,}
 	topic_dump = json.dumps(topic)
 	client.publish( f"srdl/req_topic/{mac_addr}/", topic_dump)
 
@@ -84,7 +85,7 @@ if district_id is None:
 
 def check_topic(msg):
 	global division_id, district_id, upazilla_id, lab_id
-	if (division_id is None and district_id is None and upazilla_id is None and lab_id is None):
+	if (division_id is None or district_id is None or upazilla_id is None or lab_id is None):
 		data = json.loads(msg)
 		topic_value = data.get("topic", "")
 		
@@ -111,15 +112,19 @@ def check_topic(msg):
 				print('lab_id', value)
 			print('ok')
 			client.subscribe(f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
+			print ("subscribed---", f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
+			return True
 		else:
 			print("Publish topic for address")
 			# client.publish(f"srdl/req_topic/{mac_addr}/", str({"topic": 1}))
 			topic = {"topic" : 1}
 			topic_dump = json.dumps(topic)
 			client.publish( f"srdl/req_topic/{mac_addr}/", topic_dump)
-		print ("subscribed", f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
+			print ("not subscribed---", f"srdl/req_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
+			return False
 		# district_id = "Dhaka"
 	else:
+		print('okk---')
 		return True
 
 def send_data_to_broker(msg):
@@ -127,7 +132,7 @@ def send_data_to_broker(msg):
 	info_value = data.get("info", "")
 
 	if 'info' in data and info_value == 1:
-		print("Receive a request for send info")
+		print("Receive a request for send info----")
 		res_info = info(data)
 		print(res_info)
 		print(f"srdl/res_info/{division_id}/{district_id}/{upazilla_id}/{lab_id}/{mac_addr}/")
