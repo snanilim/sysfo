@@ -63,10 +63,10 @@ print ("connecting to broker", mac_addr)
 # srdl/req_info/3/11/221/34/d8:5d:e2:2f:de:bf/
 # srdl/res_info/3/11/221/34/d8:5d:e2:2f:de:bf/
 
-# srdl/req_topic/68:f7:28:e3:f4:d4/
-# srdl/res_topic/68:f7:28:e3:f4:d4/
-# srdl/req_info/3/11/221/34/68:f7:28:e3:f4:d4/
-# srdl/res_info/3/11/221/34/68:f7:28:e3:f4:d4/
+# srdl/req_topic/24:e8:84:3b:16:/
+# srdl/res_topic/24:e8:84:3b:16:/
+# srdl/req_info/3/11/221/34/24:e8:84:3b:16:/
+# srdl/res_info/3/11/221/34/24:e8:84:3b:16:/
 
 # client.subscribe("srdl/req_info/test")
 

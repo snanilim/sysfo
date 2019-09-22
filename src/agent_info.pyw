@@ -4,6 +4,7 @@ import pprint
 import re, uuid
 import os.path, time, datetime
 import platform
+import getpass
 from requests import get
 
 
@@ -108,6 +109,10 @@ def gateway_ip():
     ip = get('https://api.ipify.org').text
     return ip
 
+def user_name():
+    username = getpass.getuser()
+    return username
+
 def info(data):
     # print('msg', msg.split(','))
     all_info = {}
@@ -166,6 +171,9 @@ def info(data):
 
     gateway_ip_value = gateway_ip()
     all_info.update({'gateway_ip': gateway_ip_value})
+
+    user_name_value = user_name()
+    all_info.update({'user_name': user_name_value})
 
     return all_info
     # pp = pprint.PrettyPrinter(indent=4)
