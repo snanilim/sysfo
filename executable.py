@@ -2,4 +2,4 @@
 
 pyinstaller --onefile <your_script_name>.py
 pyinstaller -w --onefile <your_script_name>.py
-pyinstaller -w .\agents.pyw
+pyinstaller -w --onefile .\agents.pyw
